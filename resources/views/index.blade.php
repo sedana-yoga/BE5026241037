@@ -1,21 +1,18 @@
-<!DOCTYPE html>
-<html>
+@extends('template')
+@section('judul_halaman', 'Data Pegawai')
+@section('konten')
+    <a href="/pegawai/tambah" class="btn btn-primary mt-3 mb-4">Tambah Pegawai Baru</a>
 
-<head>
-    <title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-</head>
-
-<body>
-
-    <h2>www.malasngoding.com</h2>
-    <h3>Data Pegawai</h3>
-
-    <a href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
+    {{-- pegawai --}}
+    <p>Cari Data Pegawai :</p>
+    <form action="/pegawai/cari" method="GET">
+        <input type="text" name="cari" placeholder="Cari Pegawai .." class="form-control">
+        <input type="submit" value="CARI" class="btn btn-success">
+    </form>
 
     <br />
-    <br />
 
-    <table border="1">
+    <table class="table table-striped table-hover">
         <tr>
             <th>Nama</th>
             <th>Jabatan</th>
@@ -30,18 +27,16 @@
                 <td>{{ $p->pegawai_umur }}</td>
                 <td>{{ $p->pegawai_alamat }}</td>
                 <td>
-                    <a href="/pegawai/edit/{{ $p->pegawai_id }}">Edit</a>
+                    <a href="/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-warning">Edit</a>
                     |
-                    <a href="/pegawai/hapus/{{ $p->pegawai_id }}">Hapus</a>
+                    <a href="/pegawai/hapus/{{ $p->pegawai_id }}" class="btn btn-danger">Hapus</a>
                 </td>
             </tr>
         @endforeach
     </table>
+    {{ $pegawai->links() }}
+@endsection
 
-    <?php
-    echo $pegawai;
-    ?>
-
-</body>
-
-</html>
+{{-- <?php
+echo $pegawai;
+?> --}}
