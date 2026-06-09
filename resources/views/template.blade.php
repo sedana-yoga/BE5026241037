@@ -24,7 +24,7 @@
                         <a class="nav-link" href="/pegawai">Pegawai</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Nama tabel PR</a>
+                        <a class="nav-link" href="/keyboard">Keyboard</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Siswa</a>

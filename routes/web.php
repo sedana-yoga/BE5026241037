@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\KeyboardController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -68,3 +69,12 @@ Route::get('/pegawai/edit/{id}', [PegawaiDBController::class, 'edit']);
 Route::post('/pegawai/update', [PegawaiDBController::class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
 Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
+
+//route CRUD Tugas Pra EAS
+Route::get('/keyboard', [KeyboardController::class, 'index']);
+Route::get('/keyboard/tambah', [KeyboardController::class, 'tambah']);
+Route::post('/keyboard/store', [KeyboardController::class, 'store']);
+Route::get('/keyboard/edit/{id}', [KeyboardController::class, 'edit']);
+Route::post('/keyboard/update', [KeyboardController::class, 'update']);
+Route::get('/keyboard/hapus/{id}', [KeyboardController::class, 'hapus']);
+Route::get('/keyboard/cari', [KeyboardController::class, 'cari']);

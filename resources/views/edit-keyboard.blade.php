@@ -1,0 +1,52 @@
+@extends('template')
+@section('judul_halaman', 'Data Keyboard')
+@section('konten')
+    <a href="/keyboard" class="btn btn-secondary mt-3 mb-4">Kembali</a>
+
+    @foreach ($keyboard as $p)
+        <div class="card">
+            <div class="card-header">
+                Form Edit Data Keyboard
+            </div>
+
+            <div class="card-body">
+                <form action="/keyboard/update" method="post">
+                    {{ csrf_field() }}
+
+                    <input type="hidden" name="id" value="{{ $p->kodekeyboard }}">
+
+                    <div class="row mb-3">
+                        <label for="merk" class="col-sm-2 col-form-label">Merk</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="merk" id="merk" class="form-control" required
+                                value="{{ $p->merkkeyboard }}">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="stock" class="col-sm-2 col-form-label">Stock</label>
+                        <div class="col-sm-10">
+                            <input type="number" name="stock" id="stock" class="form-control" required
+                                value="{{ $p->stockkeyboard }}">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label for="tersedia" class="col-sm-2 col-form-label">Tersedia</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="tersedia" id="tersedia" class="form-control" required
+                                value="{{ $p->tersedia }}">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="offset-sm-2 col-sm-10">
+                            <input type="submit" value="Simpan Data" class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    @endforeach
+@endsection
