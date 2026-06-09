@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -14,7 +15,7 @@
     <div class="container">
         <div class="mt-4 p-5 bg-primary text-white rounded">
             <h1>5026241037 I Gusti Made Sedana Yoga</h1>
-            <p>@yield('judul_halaman')</p>
+            <p>@yield('judul_halaman', 'title')</p>
         </div>
 
         <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
@@ -27,7 +28,7 @@
                         <a class="nav-link" href="/keyboard">Keyboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Siswa</a>
+                        <a class="nav-link" href="/siswa">Siswa</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Latihan 1</a>
