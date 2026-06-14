@@ -1,7 +1,8 @@
 @extends('template')
 @section('judul_halaman', 'Keranjang Belanja')
 @section('konten')
-    {{-- <a href="/keyboard/tambah" class="btn btn-primary mt-3 mb-4">Tambah Keyboard Baru</a> --}}
+    <h2>Data Keranjang Belanja</h2>
+    <a href="/keranjangbelanja/tambah" class="btn btn-primary mb-4">Beli</a>
 
     {{-- keyboard --}}
     {{-- <p>Cari Data keyboard :</p>
@@ -29,8 +30,6 @@
                 <td>{{ number_format($p->Harga) }}</td>
                 <td>{{ number_format($p->Jumlah * $p->Harga) }}</td>
                 <td>
-                    <a href="/keranjangbelanja/tambah/" class="btn btn-warning">Beli</a>
-                    |
                     <a href="/keranjangbelanja/hapus/{{ $p->ID }}" class="btn btn-danger">Batal</a>
                 </td>
             </tr>
