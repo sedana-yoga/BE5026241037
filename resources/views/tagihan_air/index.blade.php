@@ -24,8 +24,8 @@
             <tr>
                 <td>{{ $row->ID }}</td>
                 <td>{{ $row->NoMeteran }}</td>
-                <td>{{ number_format($row->MeterAkhir - $row->MeterAwal) }}</td>
-                <td>{{ number_format($row->MeterAkhir - $row->MeterAwal) * 5000 }}</td>
+                <td>{{ number_format($row->MeterAkhir - $row->MeterAwal, 0, ',', '.') }}</td>
+                <td>{{ number_format(($row->MeterAkhir - $row->MeterAwal) * 5000, 0, ',', '.') }}</td>
             </tr>
         @empty
             <tr>

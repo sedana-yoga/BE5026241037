@@ -11,7 +11,7 @@ class EasController extends Controller
     public function index()
     {
         $tagihan_air = DB::table('tagihan_air')->orderBy('ID')->get();
-        return view('tagihan_air.index');
+        return view('tagihan_air.index', ['tagihan_air' => $tagihan_air]);
     }
 
     public function create()
