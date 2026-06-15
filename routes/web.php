@@ -8,6 +8,7 @@ use App\Http\Controllers\KeyboardController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KeranjangBelanjaController;
 use App\Http\Controllers\NilaiKuliahController;
+use App\Http\Controllers\EasController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -100,3 +101,8 @@ Route::get('/keranjangbelanja/hapus/{id}', [KeranjangBelanjaController::class, '
 Route::get('/nilaikuliah', [NilaiKuliahController::class, 'index'])->name('nilaikuliah.index');
 Route::get('/nilaikuliah/create', [NilaiKuliahController::class, 'create'])->name('nilaikuliah.create');
 Route::post('/nilaikuliah', [NilaiKuliahController::class, 'store'])->name('nilaikuliah.store');
+
+//Route CRUD EAS
+Route::get('/eas', [EasController::class, 'index'])->name('tagihan_air.index');
+Route::get('/eas/create', [EasController::class, 'create'])->name('tagihan_air.create');
+Route::post('/eas', [EasController::class, 'store'])->name('tagihan_air.store');
